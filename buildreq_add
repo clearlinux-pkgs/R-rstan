@@ -1,0 +1,9 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+R-coda
+R-gridExtra
+R-StanHeaders
+R-inline
+R-RcppEigen
+R-ggplot2
+R-BH
