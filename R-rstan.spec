@@ -4,17 +4,13 @@
 #
 Name     : R-rstan
 Version  : 2.18.2
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Summary  : R Interface to Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstan-lib = %{version}-%{release}
-Requires: R-callr
-Requires: R-loo
-Requires: R-mime
-Requires: R-pkgbuild
 BuildRequires : R-BH
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
@@ -23,9 +19,13 @@ BuildRequires : R-coda
 BuildRequires : R-ggplot2
 BuildRequires : R-gridExtra
 BuildRequires : R-inline
+BuildRequires : R-labeling
 BuildRequires : R-loo
 BuildRequires : R-mime
 BuildRequires : R-pkgbuild
+BuildRequires : R-prettyunits
+BuildRequires : R-ps
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 
 %description
@@ -54,10 +54,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549269396
+export SOURCE_DATE_EPOCH=1549278827
 
 %install
-export SOURCE_DATE_EPOCH=1549269396
+export SOURCE_DATE_EPOCH=1549278827
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
