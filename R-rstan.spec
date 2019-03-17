@@ -4,13 +4,14 @@
 #
 Name     : R-rstan
 Version  : 2.18.2
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Summary  : R Interface to Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstan-lib = %{version}-%{release}
+Requires: R-matrixStats
 BuildRequires : R-BH
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
@@ -21,6 +22,7 @@ BuildRequires : R-gridExtra
 BuildRequires : R-inline
 BuildRequires : R-labeling
 BuildRequires : R-loo
+BuildRequires : R-matrixStats
 BuildRequires : R-mime
 BuildRequires : R-pkgbuild
 BuildRequires : R-prettyunits
@@ -54,10 +56,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549278827
+export SOURCE_DATE_EPOCH=1552861342
 
 %install
-export SOURCE_DATE_EPOCH=1549278827
+export SOURCE_DATE_EPOCH=1552861342
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -93,8 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rstan|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rstan || :
 
 
 %files
@@ -148,7 +149,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rstan/include/rstan/sum_values.hpp
 /usr/lib64/R/library/rstan/include/rstan/value.hpp
 /usr/lib64/R/library/rstan/include/rstan/values.hpp
-/usr/lib64/R/library/rstan/libs/symbols.rds
 /usr/lib64/R/library/rstan/misc/rstan_doc_ex_1.csv
 /usr/lib64/R/library/rstan/misc/rstan_doc_ex_2.csv
 /usr/lib64/R/library/rstan/misc/rstan_doc_ex_3.csv
@@ -156,6 +156,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rstan/misc/rstan_doc_ex_incomplete_1.csv
 /usr/lib64/R/library/rstan/misc/rstan_doc_ex_incomplete_2.csv
 /usr/lib64/R/library/rstan/misc/stan_progress.html
+/usr/lib64/R/library/rstan/tests/doRUnit.R
 /usr/lib64/R/library/rstan/unitTests/runRunitTests.R
 /usr/lib64/R/library/rstan/unitTests/runit.test.chains.R
 /usr/lib64/R/library/rstan/unitTests/runit.test.extract_sparse_parts.R
@@ -171,5 +172,3 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/rstan/libs/rstan.so
-/usr/lib64/R/library/rstan/libs/rstan.so.avx2
-/usr/lib64/R/library/rstan/libs/rstan.so.avx512

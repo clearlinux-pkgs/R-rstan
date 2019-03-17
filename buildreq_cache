@@ -2,6 +2,7 @@
 R-callr
 R-labeling
 R-loo
+R-matrixStats
 R-mime
 R-pkgbuild
 R-prettyunits
