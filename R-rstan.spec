@@ -4,29 +4,46 @@
 #
 Name     : R-rstan
 Version  : 2.18.2
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Summary  : R Interface to Stan
 Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-rstan-lib = %{version}-%{release}
-Requires: R-matrixStats
+Requires: R-Rcpp
+Requires: R-gtable
+Requires: R-lazyeval
+Requires: R-munsell
+Requires: R-pillar
+Requires: R-pkgconfig
+Requires: R-plyr
+Requires: R-scales
+Requires: R-tibble
 BuildRequires : R-BH
+BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
 BuildRequires : R-StanHeaders
 BuildRequires : R-callr
 BuildRequires : R-coda
 BuildRequires : R-ggplot2
 BuildRequires : R-gridExtra
+BuildRequires : R-gtable
 BuildRequires : R-inline
 BuildRequires : R-labeling
+BuildRequires : R-lazyeval
 BuildRequires : R-loo
 BuildRequires : R-matrixStats
 BuildRequires : R-mime
+BuildRequires : R-munsell
+BuildRequires : R-pillar
 BuildRequires : R-pkgbuild
+BuildRequires : R-pkgconfig
+BuildRequires : R-plyr
 BuildRequires : R-prettyunits
 BuildRequires : R-ps
+BuildRequires : R-scales
+BuildRequires : R-tibble
 BuildRequires : R-withr
 BuildRequires : buildreq-R
 
@@ -56,10 +73,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552861342
+export SOURCE_DATE_EPOCH=1552953488
 
 %install
-export SOURCE_DATE_EPOCH=1552861342
+export SOURCE_DATE_EPOCH=1552953488
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
