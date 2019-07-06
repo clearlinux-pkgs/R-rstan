@@ -4,7 +4,7 @@
 #
 Name     : R-rstan
 Version  : 2.18.2
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.18.2.tar.gz
 Summary  : R Interface to Stan
@@ -16,9 +16,10 @@ Requires: R-StanHeaders
 Requires: R-ggplot2
 Requires: R-gridExtra
 Requires: R-inline
-Requires: R-labeling
 Requires: R-loo
+Requires: R-munsell
 Requires: R-pkgbuild
+Requires: R-stringi
 BuildRequires : R-BH
 BuildRequires : R-Rcpp
 BuildRequires : R-RcppEigen
@@ -29,7 +30,9 @@ BuildRequires : R-gridExtra
 BuildRequires : R-inline
 BuildRequires : R-labeling
 BuildRequires : R-loo
+BuildRequires : R-munsell
 BuildRequires : R-pkgbuild
+BuildRequires : R-stringi
 BuildRequires : buildreq-R
 
 %description
@@ -58,10 +61,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562212822
+export SOURCE_DATE_EPOCH=1562449821
 
 %install
-export SOURCE_DATE_EPOCH=1562212822
+export SOURCE_DATE_EPOCH=1562449821
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
