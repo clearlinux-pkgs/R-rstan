@@ -4,7 +4,7 @@
 #
 Name     : R-rstan
 Version  : 2.19.2
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/rstan_2.19.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.19.2.tar.gz
 Summary  : R Interface to Stan
@@ -29,6 +29,7 @@ BuildRequires : R-inline
 BuildRequires : R-loo
 BuildRequires : R-pkgbuild
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 estimate, and analyze Stan models by accessing the header-only Stan library
@@ -56,10 +57,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562775278
+export SOURCE_DATE_EPOCH=1571900727
 
 %install
-export SOURCE_DATE_EPOCH=1562775278
+export SOURCE_DATE_EPOCH=1571900727
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
