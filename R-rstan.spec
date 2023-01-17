@@ -4,7 +4,7 @@
 #
 Name     : R-rstan
 Version  : 2.21.8
-Release  : 57
+Release  : 58
 URL      : https://cran.r-project.org/src/contrib/rstan_2.21.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.21.8.tar.gz
 Summary  : R Interface to Stan
@@ -33,9 +33,6 @@ BuildRequires : R-inline
 BuildRequires : R-loo
 BuildRequires : R-pkgbuild
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 estimate, and analyze Stan models by accessing the header-only Stan library
@@ -64,10 +61,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1673974574
+export SOURCE_DATE_EPOCH=1673977667
 
 %install
-export SOURCE_DATE_EPOCH=1673974574
+export SOURCE_DATE_EPOCH=1673977667
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
