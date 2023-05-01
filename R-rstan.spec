@@ -4,7 +4,7 @@
 #
 Name     : R-rstan
 Version  : 2.21.8
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/rstan_2.21.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rstan_2.21.8.tar.gz
 Summary  : R Interface to Stan
